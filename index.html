@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Henry Cyril | Telecommunications Systems Architect and Researcher
+  </title>
+
+  <meta name="description"
+        content="Henry Cyril is a telecommunications systems architect and researcher specializing in AI-driven provisioning, autonomous networks, cloud-native OSS/BSS modernization, distributed systems, and next-generation connectivity.">
+
+  <style>
+    :root {
+      --navy: #07182c;
+      --navy-light: #102f52;
+      --blue: #1671d9;
+      --blue-light: #eaf4ff;
+      --background: #f7f9fc;
+      --white: #ffffff;
+      --text: #172033;
+      --muted: #5d6878;
+      --border: #dce4ed;
+      --accent: #75b9ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 7%;
+      background: rgba(7, 24, 44, 0.97);
+      color: var(--white);
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      margin-left: 22px;
+      color: #dce9f7;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 95px 7%;
+      background:
+        radial-gradient(
+          circle at 82% 18%,
+          #1d568e 0%,
+          transparent 34%
+        ),
+        linear-gradient(
+          135deg,
+          #061323,
+          #0a2848
+        );
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 980px;
+    }
+
+    .eyebrow {
+      margin-bottom: 15px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 1.04;
+    }
+
+    .hero h2 {
+      max-width: 900px;
+      margin: 18px 0;
+      color: #cbe5ff;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .hero p {
+      max-width: 825px;
+      color: #e0ebf7;
+      font-size: 19px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 0 12px 12px 0;
+      padding: 13px 22px;
+      border-radius: 7px;
+      background: var(--blue);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      border: 1px solid #a8cbea;
+      background: transparent;
+    }
+
+    main section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 75px 7%;
+    }
+
+    .full-width {
+      max-width: none;
+      background: var(--white);
+    }
+
+    .section-inner {
+      max-width: 1020px;
+      margin: auto;
+    }
+
+    .section-label {
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    section h2 {
+      margin: 0 0 20px;
+      color: var(--navy);
+      font-size: 36px;
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 940px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .stat {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--white);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--navy);
+      font-size: 24px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(245px, 1fr));
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      box-shadow:
+        0 8px 24px rgba(22, 43, 70, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .contribution {
+      margin: 26px 0;
+      padding: 28px;
+      border-left: 5px solid var(--blue);
+      border-radius: 7px;
+      background: var(--blue-light);
+    }
+
+    .contribution h3 {
+      margin: 0 0 9px;
+      color: var(--navy);
+    }
+
+    .contribution p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .publication {
+      margin-bottom: 19px;
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--white);
+    }
+
+    .publication h3 {
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .publication p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .publication-type {
+      display: inline-block;
+      margin-bottom: 9px;
+      padding: 4px 9px;
+      border-radius: 4px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .notice {
+      margin-top: 30px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-box {
+      padding: 38px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .contact-box h2 {
+      color: var(--white);
+    }
+
+    .contact-box p {
+      color: #dbe8f5;
+    }
+
+    footer {
+      padding: 29px 7%;
+      background: #030c17;
+      color: #aab9c9;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: block;
+      }
+
+      .nav-links {
+        margin-top: 12px;
+      }
+
+      .nav-links a {
+        display: inline-block;
+        margin: 5px 12px 5px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 75px;
+        padding-bottom: 75px;
+      }
+
+      main section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="brand">Henry Cyril</div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#contributions">Contributions</a>
+      <a href="#publications">Publications</a>
+      <a href="#service">Professional Service</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Telecommunications Architecture • AI • Autonomous Networks
+      </div>
+
+      <h1>Henry Cyril</h1>
+
+      <h2>
+        Telecommunications Systems Architect and Researcher
+        advancing AI-driven, cloud-native, and resilient
+        network provisioning platforms.
+      </h2>
+
+      <p>
+        Henry Cyril specializes in large-scale telecommunications
+        systems, intelligent network automation, distributed
+        transaction processing, OSS/BSS modernization, and
+        next-generation service enablement across 5G and emerging
+        autonomous-network environments.
+      </p>
+
+      <div class="buttons">
+        <a class="button" href="#about">
+          Professional Biography
+        </a>
+
+        <a class="button secondary" href="#publications">
+          Research and Publications
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about">
+      <div class="section-label">Professional Profile</div>
+
+      <h2>About Henry Cyril</h2>
+
+      <p class="lead">
+        Henry Cyril is a Principal Systems Architect and researcher
+        with nearly two decades of experience in telecommunications,
+        enterprise systems architecture, service provisioning,
+        network automation, and digital transformation.
+      </p>
+
+      <p class="lead">
+        His work focuses on the architectural challenges involved
+        in operating high-volume, highly available telecommunications
+        platforms, including transaction consistency, failure recovery,
+        observability, service activation, intelligent automation,
+        and distributed network orchestration.
+      </p>
+
+      <p class="lead">
+        His research bridges large-scale engineering practice with
+        applied work in event-driven architecture, cloud-native
+        systems, AI-driven anomaly detection, self-healing networks,
+        deterministic transaction processing, and autonomous
+        telecommunications operations.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>Nearly 20 Years</strong>
+          <span>
+            Telecommunications and systems-architecture experience
+          </span>
+        </div>
+
+        <div class="stat">
+          <strong>National Scale</strong>
+          <span>
+            Architecture supporting large customer and transaction volumes
+          </span>
+        </div>
+
+        <div class="stat">
+          <strong>AI + Telecom</strong>
+          <span>
+            Research and innovation in intelligent network operations
+          </span>
+        </div>
+
+        <div class="stat">
+          <strong>5G–6G Focus</strong>
+          <span>
+            Modern and emerging autonomous-network architectures
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="full-width">
+      <div class="section-inner">
+
+        <div class="section-label">Research Focus</div>
+
+        <h2>Research and Technical Interests</h2>
+
+        <div class="cards">
+
+          <div class="card">
+            <h3>AI-Driven Network Operations</h3>
+            <p>
+              Anomaly detection, outage prediction, intelligent
+              prioritization, autonomous remediation, and closed-loop
+              operational assurance.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Event-Driven Provisioning</h3>
+            <p>
+              Asynchronous service activation, distributed event
+              processing, resilient transaction replay, and scalable
+              orchestration.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Transaction Serialization</h3>
+            <p>
+              Deterministic ordering, concurrency control, distributed
+              consistency, idempotent execution, and failure-safe
+              transaction processing.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Cloud-Native OSS/BSS</h3>
+            <p>
+              Microservices, Kubernetes, active-active resilience,
+              automated delivery, observability, and modular
+              telecommunications platforms.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Self-Healing Networks</h3>
+            <p>
+              Intelligent queuing, adaptive throttling, automated
+              recovery, predictive assurance, and fault-tolerant
+              service execution.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Autonomous 5G and 6G</h3>
+            <p>
+              Intent-driven provisioning, non-terrestrial connectivity,
+              network slicing, zero-touch operations, and agentic
+              network intelligence.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contributions">
+
+      <div class="section-label">Selected Industry Contributions</div>
+
+      <h2>Architecture and Technology Leadership</h2>
+
+      <div class="contribution">
+        <h3>
+          Modernized Telecommunications Provisioning Infrastructure
+        </h3>
+
+        <p>
+          Led architectural modernization of high-volume provisioning
+          platforms using deterministic transaction processing,
+          active-active resiliency, automated recovery, adaptive
+          workload management, and centralized observability.
+        </p>
+      </div>
+
+      <div class="contribution">
+        <h3>
+          AI-Powered Provisioning Analytics and Automation
+        </h3>
+
+        <p>
+          Designed an intelligent operational framework integrating
+          real-time analytics, anomaly detection, predictive outage
+          identification, automated validation, self-healing workflows,
+          and cross-domain observability.
+        </p>
+      </div>
+
+      <div class="contribution">
+        <h3>
+          5G Service Provisioning and Enablement
+        </h3>
+
+        <p>
+          Contributed architecture and rollout strategies supporting
+          large-scale 5G Non-Standalone and Standalone service
+          enablement across diverse customer and device segments.
+        </p>
+      </div>
+
+      <div class="contribution">
+        <h3>
+          Satellite-to-Cell Connectivity Enablement
+        </h3>
+
+        <p>
+          Contributed provisioning and orchestration architecture
+          supporting direct-to-device satellite connectivity,
+          controlled service rollout, network interoperability,
+          and emergency communication capabilities.
+        </p>
+      </div>
+
+      <div class="contribution">
+        <h3>
+          Large-Scale Customer and Platform Migration
+        </h3>
+
+        <p>
+          Designed asynchronous orchestration and controlled migration
+          frameworks supporting complex telecommunications-platform
+          integration while preserving service continuity and data
+          consistency.
+        </p>
+      </div>
+
+      <div class="contribution">
+        <h3>
+          Digital Customer Experience and Network Diagnostics
+        </h3>
+
+        <p>
+          Led architecture supporting real-time network visibility,
+          automated diagnostic validation, and intelligent self-service
+          capabilities within a major customer-facing digital platform.
+        </p>
+      </div>
+
+    </section>
+
+    <section id="publications" class="full-width">
+      <div class="section-inner">
+
+        <div class="section-label">Scholarly Work</div>
+
+        <h2>Selected Publications</h2>
+
+        <div class="publication">
+          <span class="publication-type">Research Paper</span>
+
+          <h3>
+            Event-Driven Provisioning Architectures for Modern
+            Telecom Networks: Overcoming Legacy Limitations and
+            Enabling Autonomous 6G Operations
+          </h3>
+
+          <p>
+            International Journal of Advanced Research in Computer
+            Science, Volume 16, Issue 6, 2025.
+            DOI: 10.26483/ijarcs.v16i6.7389
+          </p>
+        </div>
+
+        <div class="publication">
+          <span class="publication-type">Research Paper</span>
+
+          <h3>
+            Serialization of Telecom Provisioning Transactions
+            in Distributed Systems
+          </h3>
+
+          <p>
+            International Journal of Current Engineering and
+            Technology, Volume 15, Issue 6, 2025.
+            DOI: 10.14741/ijcet/v.15.6.6
+          </p>
+        </div>
+
+        <div class="publication">
+          <span class="publication-type">Research Paper</span>
+
+          <h3>
+            AI-Driven Self-Healing and Transaction Queuing During
+            Network Outages or Degradation
+          </h3>
+
+          <p>
+            Research on AI-assisted fault detection, intelligent
+            transaction buffering, service continuity, and autonomous
+            recovery for next-generation telecommunications networks.
+          </p>
+        </div>
+
+        <div class="publication">
+          <span class="publication-type">Research Paper</span>
+
+          <h3>
+            AI-Driven Anomaly Detection, Outage Prediction, and
+            Self-Healing in Telecom Provisioning Systems
+          </h3>
+
+          <p>
+            A mathematical and analytical framework for anomaly
+            identification, predictive degradation modeling, and
+            autonomous recovery in distributed provisioning systems.
+          </p>
+        </div>
+
+        <div class="publication">
+          <span class="publication-type">Research Paper</span>
+
+          <h3>
+            OSS/BSS Modernization in the 5G–6G Era
+          </h3>
+
+          <p>
+            Research on integrated, event-driven, AI-enabled OSS/BSS
+            architectures supporting service-aware operations,
+            predictive assurance, and closed-loop automation.
+          </p>
+        </div>
+
+        <div class="publication">
+          <span class="publication-type">Book</span>
+
+          <h3>
+            Next-Generation Telecom Provisioning:
+            AI-Driven, Cloud-Native Architectures for
+            Autonomous Networks
+          </h3>
+
+          <p>
+            A technical book examining cloud-native provisioning,
+            distributed transaction management, AI-enabled automation,
+            intent-driven networking, zero-touch operations, and
+            autonomous telecom architectures.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="service">
+
+      <div class="section-label">Professional Engagement</div>
+
+      <h2>Professional Service and Recognition</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Technical Judging</h3>
+          <p>
+            Participation in the evaluation of technical and research
+            work for conferences and professional programs.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Peer Review</h3>
+          <p>
+            Review of scholarly and technical submissions involving
+            telecommunications, artificial intelligence, distributed
+            systems, and related engineering disciplines.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Editorial Activities</h3>
+          <p>
+            Contributions to academic and professional publication
+            processes through editorial and review responsibilities.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Patents and Innovation</h3>
+          <p>
+            Contributor to inventions involving intelligent
+            provisioning, anomaly detection, outage prediction,
+            transaction control, network resilience, and automation.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Industry Awards</h3>
+          <p>
+            Recipient of professional recognition for technical
+            leadership, enterprise architecture, execution, and
+            contributions to important telecommunications initiatives.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Professional Memberships</h3>
+          <p>
+            Engagement with engineering, scientific, and
+            telecommunications professional organizations.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="notice">
+        Public evidence, publication links, patent references,
+        judging appointments, awards, and professional memberships
+        will be added only after verification and appropriate
+        authorization.
+      </div>
+
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+
+        <div class="section-label">Professional Contact</div>
+
+        <h2>Connect with Henry Cyril</h2>
+
+        <p>
+          For research, technical collaboration, conference,
+          publication, reviewing, media, or professional inquiries.
+        </p>
+
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/henrycyril"
+             target="_blank"
+             rel="noopener">
+            github.com/henrycyril
+          </a>
+        </p>
+
+        <p>
+          <strong>LinkedIn:</strong>
+          Add your LinkedIn profile link here
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          Add your professional email address here
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Henry Cyril. All rights reserved.
+  </footer>
+
+</body>
+</html>
