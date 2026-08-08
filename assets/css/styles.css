@@ -647,6 +647,40 @@ img {
   background: var(--gold);
 }
 
+.strip-label {
+  max-width: var(--max-width);
+  margin: 0 auto 1rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.32rem 0.7rem;
+  white-space: nowrap;
+}
+
+.section-cta {
+  margin: 1.4rem 0 0;
+}
+
+.section-cta a {
+  font-weight: 700;
+}
+
 .cta-block {
   margin: 3.2rem 1.5rem 0;
   padding: 2rem 1.8rem;
@@ -780,7 +814,8 @@ img {
 
   .section-block,
   .page-main,
-  .cta-block {
+  .cta-block,
+  .strip-label {
     padding-left: 1rem;
     padding-right: 1rem;
   }
