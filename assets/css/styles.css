@@ -805,6 +805,137 @@ img {
   gap: 1.1rem;
 }
 
+/* Patent table (list view) */
+
+.patent-table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.006));
+}
+
+.patent-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patent-table caption {
+  text-align: left;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.patent-table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.patent-table th.col-status,
+.patent-table td.col-status {
+  width: 190px;
+}
+
+.patent-table th.col-id,
+.patent-table td.col-id {
+  width: 210px;
+}
+
+.patent-table td {
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.patent-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.patent-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.patent-table td.col-title {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+
+.patent-table td.col-id {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .patent-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .patent-table,
+  .patent-table tbody,
+  .patent-table tr,
+  .patent-table td {
+    display: block;
+    width: auto;
+  }
+
+  .patent-table tr {
+    padding: 0.9rem 1.1rem 1rem;
+  }
+
+  .patent-table td {
+    border-bottom: none;
+    padding: 0.3rem 0;
+  }
+
+  .patent-table td.col-title {
+    padding-top: 0.2rem;
+  }
+
+  .patent-table td.col-id,
+  .patent-table td.col-status {
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .patent-table td.col-id::before,
+  .patent-table td.col-status::before {
+    content: attr(data-label);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    flex: 0 0 auto;
+  }
+
+  .patent-table tbody tr {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .patent-table tbody tr:last-child {
+    border-bottom: none;
+  }
+}
+
 .patent-card {
   display: flex;
   flex-direction: column;
@@ -853,45 +984,46 @@ img {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: currentColor;
-  opacity: 0.85;
+  background: var(--step-color);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-.status-granted {
-  color: var(--accent-2);
-  border-color: rgba(124, 207, 255, 0.45);
-  background: var(--accent-soft);
-}
-
-.status-approved-published {
-  color: var(--accent-2);
-  border-color: rgba(124, 207, 255, 0.28);
-  background: rgba(124, 207, 255, 0.07);
-}
-
-.status-published {
-  color: var(--gold);
-  border-color: rgba(216, 179, 120, 0.35);
-  background: var(--gold-soft);
+/*
+  Status is an ordinal progression (Filed -> Published -> Approved/Published ->
+  Granted/Approved), not four unrelated categories, so it uses one hue at
+  monotone lightness steps rather than four distinct hues. Ramp validated with
+  scripts/validate_palette.js --ordinal --mode dark --surface #101d2d (all
+  checks pass: lightness monotone, adjacent deltaL >= 0.06, light-end contrast
+  2.10:1, single hue). Badge text always uses --text for guaranteed WCAG
+  contrast; the ordinal hue only carries the dot + border + background tint,
+  so status is never conveyed by color alone.
+*/
+.status-badge {
+  color: var(--text);
 }
 
 .status-filed {
-  color: var(--text);
-  border-color: var(--border-strong);
-  background: rgba(255, 255, 255, 0.04);
+  --step-color: #184f95;
+  border-color: rgba(24, 79, 149, 0.55);
+  background: rgba(24, 79, 149, 0.14);
 }
 
-.status-tbf {
-  color: var(--muted);
-  border-style: dashed;
-  background: transparent;
+.status-published {
+  --step-color: #2a78d6;
+  border-color: rgba(42, 120, 214, 0.6);
+  background: rgba(42, 120, 214, 0.16);
 }
 
-.status-submitted {
-  color: var(--muted-2);
-  border-style: dashed;
-  border-color: var(--border);
-  background: transparent;
+.status-approved-published {
+  --step-color: #6da7ec;
+  border-color: rgba(109, 167, 236, 0.65);
+  background: rgba(109, 167, 236, 0.18);
+}
+
+.status-granted {
+  --step-color: #9ec5f4;
+  border-color: rgba(158, 197, 244, 0.7);
+  background: rgba(158, 197, 244, 0.2);
 }
 
 .research-links {
